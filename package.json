@@ -2,7 +2,7 @@
   "name": "@synonymdev/raw-transaction-decoder",
   "author": "synonymdev",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Decodes Raw Bitcoin Transactions",
   "main": "dist/index.js",
   "scripts": {
