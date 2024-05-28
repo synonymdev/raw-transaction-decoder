@@ -70,6 +70,7 @@ const formatOutput = (out: TxOutput, n: number, network: Network): TOutput => {
 		case 'pubkey':
 		case 'multisig':
 		case 'pay-to-witness-pubkey-hash':
+		case 'pay-to-witness-script-hash':
 		case 'pay-to-taproot':
 		case 'scripthash':
 			const address = bitcoin.address.fromOutputScript(out.script, network);
@@ -99,6 +100,8 @@ const classifyOutputScript = (script): string => {
 		return 'multisig';
 	} else if (isOutput(bitcoin.payments.p2wpkh)) {
 		return 'pay-to-witness-pubkey-hash';
+	} else if (isOutput(bitcoin.payments.p2wsh)) {
+		return 'pay-to-witness-script-hash';
 	} else if (isOutput(bitcoin.payments.p2sh)) {
 		return 'scripthash';
 	} else if (isOutput(bitcoin.payments.p2tr)) {
